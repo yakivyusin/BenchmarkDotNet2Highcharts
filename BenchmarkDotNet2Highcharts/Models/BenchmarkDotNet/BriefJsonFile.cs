@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BenchmarkDotNet2Highcharts.Models
+namespace BenchmarkDotNet2Highcharts.Models.BenchmarkDotNet
 {
     internal class BriefJsonFile
     {
