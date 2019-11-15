@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace BenchmarkDotNet2Highcharts.Models.BenchmarkDotNet
 {
@@ -15,5 +16,16 @@ namespace BenchmarkDotNet2Highcharts.Models.BenchmarkDotNet
         public Dictionary<string, string> ParameterValues => Parameters?.Split('&')
             .Select(p => p.Split('='))
             .ToDictionary(p => p[0], p => p[1]);
+
+        public string SpecificRuntime => ParseDisplayInfoForRuntime();
+
+        private string ParseDisplayInfoForRuntime()
+        {
+            var match = Regex.Match(DisplayInfo, @"\(Runtime=(?<runtime>.*)\)");
+
+            return match.Success ?
+                match.Groups["runtime"].Value :
+                null;
+        }
     }
 }
