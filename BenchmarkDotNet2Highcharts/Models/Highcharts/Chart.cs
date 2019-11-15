@@ -2,7 +2,7 @@
 {
     internal class Chart
     {
-        public string Type { get; set; }
+        public ChartType Type { get; set; }
         public ZoomType ZoomType { get; set; }
     }
 }
