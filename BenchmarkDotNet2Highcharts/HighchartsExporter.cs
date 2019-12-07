@@ -6,7 +6,9 @@ namespace BenchmarkDotNet2Highcharts
     public class HighchartsExporter
     {
         private const string DefaultFolderPath = "./BenchmarkDotNet.Artifacts/results";
+
         private readonly BenchmarkLoader _benchmarkLoader;
+        private readonly BenchmarkMapper _benchmarkMapper;
 
         public HighchartsExporter() : this(DefaultFolderPath)
         {
@@ -21,6 +23,7 @@ namespace BenchmarkDotNet2Highcharts
             }
 
             _benchmarkLoader = new BenchmarkLoader(folderPath);
+            _benchmarkMapper = new BenchmarkMapper();
         }
 
         public void Export()
@@ -30,6 +33,11 @@ namespace BenchmarkDotNet2Highcharts
             if (benchmarks.Count == 0)
             {
                 return;
+            }
+
+            foreach (var benchmark in benchmarks)
+            {
+                var plots = _benchmarkMapper.Map(benchmark);
             }
         }
     }
