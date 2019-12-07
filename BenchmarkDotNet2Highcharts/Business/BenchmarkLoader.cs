@@ -9,7 +9,7 @@ namespace BenchmarkDotNet2Highcharts.Business
     internal class BenchmarkLoader
     {
         private const string BenchmarkMask = "*-report-brief.json";
-        private string _folderPath;
+        private readonly string _folderPath;
 
         public BenchmarkLoader(string folderPath)
         {
