@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet2Highcharts.Models.BenchmarkDotNet;
+﻿using BenchmarkDotNet2Highcharts.Json;
+using BenchmarkDotNet2Highcharts.Models.BenchmarkDotNet;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -32,7 +33,7 @@ namespace BenchmarkDotNet2Highcharts.Business
 
             try
             {
-                return JsonConvert.DeserializeObject<BriefJsonFile>(fileContent);
+                return JsonConvert.DeserializeObject<BriefJsonFile>(fileContent, new DeserializingSettings());
             }
             catch
             {
