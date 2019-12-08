@@ -77,5 +77,58 @@ namespace BenchmarkDotNet2Highcharts.Resources {
                 return ResourceManager.GetString("DefaultYAxisLabel", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;style&gt;
+        ///        * {
+        ///            box-sizing: border-box;
+        ///        }
+        ///
+        ///        .box {
+        ///            float: left;
+        ///            width: 650px;
+        ///            height: 450px;
+        ///        }
+        ///
+        ///        .clearfix::after {
+        ///            content: &quot;&quot;;
+        ///            clear: both;
+        ///            display: table;
+        ///        }
+        ///
+        ///        .highcharts-figure, .highcharts-data-table table {
+        ///            min-width: 310px;
+        ///            max-width: 700px;
+        ///            margin: 1em auto;
+        ///        }
+        ///
+        ///      [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string HighchartFileTemplate {
+            get {
+                return ResourceManager.GetString("HighchartFileTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div id=&quot;plot-{0}&quot; class=&quot;box&quot;&gt;&lt;/div&gt;.
+        /// </summary>
+        internal static string PlotBoxTemplate {
+            get {
+                return ResourceManager.GetString("PlotBoxTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;script&gt;Highcharts.chart(&quot;plot-{0}&quot;, {1});&lt;/script&gt;.
+        /// </summary>
+        internal static string PlotInitTemplate {
+            get {
+                return ResourceManager.GetString("PlotInitTemplate", resourceCulture);
+            }
+        }
     }
 }

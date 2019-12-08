@@ -123,4 +123,14 @@
   <data name="DefaultYAxisLabel" xml:space="preserve">
     <value>Values (ns)</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="HighchartFileTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>HighchartFileTemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="PlotBoxTemplate" xml:space="preserve">
+    <value>&lt;div id="plot-{0}" class="box"&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="PlotInitTemplate" xml:space="preserve">
+    <value>&lt;script&gt;Highcharts.chart("plot-{0}", {1});&lt;/script&gt;</value>
+  </data>
 </root>
