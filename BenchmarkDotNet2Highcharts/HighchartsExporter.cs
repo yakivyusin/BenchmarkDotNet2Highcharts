@@ -1,5 +1,7 @@
 ﻿using BenchmarkDotNet2Highcharts.Business;
+using BenchmarkDotNet2Highcharts.Models.BenchmarkDotNet;
 using System;
+using System.IO;
 
 namespace BenchmarkDotNet2Highcharts
 {
@@ -9,6 +11,8 @@ namespace BenchmarkDotNet2Highcharts
 
         private readonly BenchmarkLoader _benchmarkLoader;
         private readonly BenchmarkMapper _benchmarkMapper;
+        private readonly HighchartFileBuilder _highchartFileBuilder;
+        private readonly string _folderPath;
 
         public HighchartsExporter() : this(DefaultFolderPath)
         {
@@ -24,6 +28,8 @@ namespace BenchmarkDotNet2Highcharts
 
             _benchmarkLoader = new BenchmarkLoader(folderPath);
             _benchmarkMapper = new BenchmarkMapper();
+            _highchartFileBuilder = new HighchartFileBuilder();
+            _folderPath = folderPath;
         }
 
         public void Export()
@@ -38,7 +44,19 @@ namespace BenchmarkDotNet2Highcharts
             foreach (var benchmark in benchmarks)
             {
                 var plots = _benchmarkMapper.Map(benchmark);
+                var fileContent = _highchartFileBuilder.Build(plots);
+                var fileName = GetPlotFileName(benchmark);
+                var filePath = Path.Combine(_folderPath, fileName);
+
+                File.WriteAllText(filePath, fileContent);
             }
+        }
+
+        private string GetPlotFileName(BriefJsonFile jsonFile)
+        {
+            var benchmark = jsonFile.Benchmarks[0];
+
+            return $"{benchmark.Namespace}.{benchmark.Type}-highcharts.html";
         }
     }
 }
