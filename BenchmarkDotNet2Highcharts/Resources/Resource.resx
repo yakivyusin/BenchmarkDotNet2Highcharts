@@ -133,4 +133,16 @@
   <data name="PlotInitTemplate" xml:space="preserve">
     <value>&lt;script&gt;Highcharts.chart("plot-{0}", {1});&lt;/script&gt;</value>
   </data>
+  <data name="Unit_Microsecond" xml:space="preserve">
+    <value>μs</value>
+  </data>
+  <data name="Unit_Millisecond" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="Unit_Nanosecond" xml:space="preserve">
+    <value>ns</value>
+  </data>
+  <data name="Unit_Second" xml:space="preserve">
+    <value>s</value>
+  </data>
 </root>

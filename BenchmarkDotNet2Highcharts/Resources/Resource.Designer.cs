@@ -130,5 +130,41 @@ namespace BenchmarkDotNet2Highcharts.Resources {
                 return ResourceManager.GetString("PlotInitTemplate", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to μs.
+        /// </summary>
+        internal static string Unit_Microsecond {
+            get {
+                return ResourceManager.GetString("Unit_Microsecond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ms.
+        /// </summary>
+        internal static string Unit_Millisecond {
+            get {
+                return ResourceManager.GetString("Unit_Millisecond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ns.
+        /// </summary>
+        internal static string Unit_Nanosecond {
+            get {
+                return ResourceManager.GetString("Unit_Nanosecond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to s.
+        /// </summary>
+        internal static string Unit_Second {
+            get {
+                return ResourceManager.GetString("Unit_Second", resourceCulture);
+            }
+        }
     }
 }
