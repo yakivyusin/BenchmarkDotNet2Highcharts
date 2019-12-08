@@ -3,14 +3,12 @@ using BenchmarkDotNet2Highcharts.Models.BenchmarkDotNet;
 using BenchmarkDotNet2Highcharts.Models.Highcharts;
 using System.Collections.Generic;
 using System.Linq;
+using BenchmarkDotNet2Highcharts.Resources;
 
 namespace BenchmarkDotNet2Highcharts.Business
 {
     internal class BenchmarkMapper
     {
-        private const string DefaultSeriesTooltip = "<b>Observations {point.key} (ns)</b><br/>";
-        private const string DefaltYAxisLabel = "Values (ns)";
-
         private readonly PlotFactory _plotFactory = new PlotFactory();
 
         public List<Plot> Map(BriefJsonFile benchmark)
@@ -32,7 +30,7 @@ namespace BenchmarkDotNet2Highcharts.Business
             plot.XAxis.Categories = series.First().Select(x => x.Method).ToArray();
             plot.YAxis.Title = new Title
             {
-                Text = DefaltYAxisLabel
+                Text = Resource.DefaultYAxisLabel
             };
 
             return plot;
@@ -55,7 +53,7 @@ namespace BenchmarkDotNet2Highcharts.Business
                     .ToArray(),
                 Tooltip = new Tooltip
                 {
-                    HeaderFormat = DefaultSeriesTooltip
+                    HeaderFormat = Resource.DefaultSeriesTooltip
                 }
             };
 
