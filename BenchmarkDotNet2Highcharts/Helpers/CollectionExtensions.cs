@@ -5,7 +5,7 @@ namespace BenchmarkDotNet2Highcharts.Helpers
 {
     internal static class CollectionExtensions
     {
-        public static void OnEach<T>(IEnumerable<T> collection, Action<T> action)
+        public static void OnEach<T>(this IEnumerable<T> collection, Action<T> action)
         {
             foreach (var item in collection)
             {

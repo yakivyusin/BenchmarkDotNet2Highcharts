@@ -1,9 +1,9 @@
-﻿using BenchmarkDotNet2Highcharts.Models;
+﻿using BenchmarkDotNet2Highcharts.Helpers;
+using BenchmarkDotNet2Highcharts.Models;
 using BenchmarkDotNet2Highcharts.Models.BenchmarkDotNet;
 using BenchmarkDotNet2Highcharts.Models.Highcharts;
 using System.Collections.Generic;
 using System.Linq;
-using BenchmarkDotNet2Highcharts.Resources;
 
 namespace BenchmarkDotNet2Highcharts.Business
 {
@@ -28,10 +28,9 @@ namespace BenchmarkDotNet2Highcharts.Business
             plot.Legend.Enabled = series.Count() > 1;
             plot.Series = series.Select(x => MapToSeries(x.Key, x)).ToArray();
             plot.XAxis.Categories = series.First().Select(x => x.Method).ToArray();
-            plot.YAxis.Title = new Title
-            {
-                Text = Resource.DefaultYAxisLabel
-            };
+            plot.YAxis.Title = new YAxisTitle();
+
+            FitPlotUnits(plot);
 
             return plot;
         }
@@ -51,10 +50,7 @@ namespace BenchmarkDotNet2Highcharts.Business
                         x.Statistics.Max
                     })
                     .ToArray(),
-                Tooltip = new Tooltip
-                {
-                    HeaderFormat = Resource.DefaultSeriesTooltip
-                }
+                Tooltip = new Tooltip()
             };
 
             return series;
@@ -67,6 +63,14 @@ namespace BenchmarkDotNet2Highcharts.Business
                 $": {benchmark.Parameters}";
 
             return $"{benchmark.Namespace}.{benchmark.Type}{parametersBlock}";
+        }
+
+        private void FitPlotUnits(Plot plot)
+        {
+            var bestFitUnit = UnitFitter.ApplyBestFit(plot.Series);
+
+            plot.Series.OnEach(s => s.Tooltip.Unit = bestFitUnit);
+            plot.YAxis.Title.Unit = bestFitUnit;
         }
     }
 }
