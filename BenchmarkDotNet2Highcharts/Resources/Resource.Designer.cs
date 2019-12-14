@@ -61,7 +61,7 @@ namespace BenchmarkDotNet2Highcharts.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;b&gt;Observations {point.key} (ns)&lt;/b&gt;&lt;br/&gt;.
+        ///   Looks up a localized string similar to &lt;b&gt;Observations {{point.key}} ({0})&lt;/b&gt;&lt;br/&gt;.
         /// </summary>
         internal static string DefaultSeriesTooltip {
             get {
@@ -70,7 +70,7 @@ namespace BenchmarkDotNet2Highcharts.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Values (ns).
+        ///   Looks up a localized string similar to Values ({0}).
         /// </summary>
         internal static string DefaultYAxisLabel {
             get {

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultSeriesTooltip" xml:space="preserve">
-    <value>&lt;b&gt;Observations {point.key} (ns)&lt;/b&gt;&lt;br/&gt;</value>
+    <value>&lt;b&gt;Observations {{point.key}} ({0})&lt;/b&gt;&lt;br/&gt;</value>
   </data>
   <data name="DefaultYAxisLabel" xml:space="preserve">
-    <value>Values (ns)</value>
+    <value>Values ({0})</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="HighchartFileTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
