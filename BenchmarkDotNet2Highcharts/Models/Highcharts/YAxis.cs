@@ -2,6 +2,6 @@
 {
     internal class YAxis
     {
-        public Title Title { get; set; }
+        public YAxisTitle Title { get; set; }
     }
 }
