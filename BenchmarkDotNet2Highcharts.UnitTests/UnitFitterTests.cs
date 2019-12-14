@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet2Highcharts.Business;
 using BenchmarkDotNet2Highcharts.Models;
+using BenchmarkDotNet2Highcharts.Models.Highcharts;
 using NUnit.Framework;
 
 namespace BenchmarkDotNet2Highcharts.UnitTests
@@ -15,8 +16,12 @@ namespace BenchmarkDotNet2Highcharts.UnitTests
                 new [] { 500m, 1500m },
                 new [] { 1600m, 2000m }
             };
+            var series = new Series
+            {
+                Data = data
+            };
 
-            var unit = UnitFitter.ApplyBestFit(data);
+            var unit = UnitFitter.ApplyBestFit(new[] { series });
 
             Assert.AreEqual(Unit.Nanosecond, unit);
 
@@ -32,8 +37,12 @@ namespace BenchmarkDotNet2Highcharts.UnitTests
                 new [] { 1000m, 1500m },
                 new [] { 1001m, 2000m }
             };
+            var series = new Series
+            {
+                Data = data
+            };
 
-            var unit = UnitFitter.ApplyBestFit(data);
+            var unit = UnitFitter.ApplyBestFit(new[] { series });
 
             Assert.AreEqual(Unit.Microsecond, unit);
 
@@ -49,8 +58,12 @@ namespace BenchmarkDotNet2Highcharts.UnitTests
                 new [] { 1_500_000m, 1_500_000m },
                 new [] { 600_000m, 2_000_000m }
             };
+            var series = new Series
+            {
+                Data = data
+            };
 
-            var unit = UnitFitter.ApplyBestFit(data);
+            var unit = UnitFitter.ApplyBestFit(new[] { series });
 
             Assert.AreEqual(Unit.Microsecond, unit);
 
@@ -66,8 +79,12 @@ namespace BenchmarkDotNet2Highcharts.UnitTests
                 new [] { 1_500_000m, 3_050_000m },
                 new [] { 2_000_000m, 1_000_000m }
             };
+            var series = new Series
+            {
+                Data = data
+            };
 
-            var unit = UnitFitter.ApplyBestFit(data);
+            var unit = UnitFitter.ApplyBestFit(new[] { series });
 
             Assert.AreEqual(Unit.Millisecond, unit);
 
@@ -83,8 +100,12 @@ namespace BenchmarkDotNet2Highcharts.UnitTests
                 new [] { 1_000_500_000m, 3_000_050_000m },
                 new [] { 2_000_000_000m, 1_000_000m }
             };
+            var series = new Series
+            {
+                Data = data
+            };
 
-            var unit = UnitFitter.ApplyBestFit(data);
+            var unit = UnitFitter.ApplyBestFit(new[] { series });
 
             Assert.AreEqual(Unit.Millisecond, unit);
 
@@ -100,8 +121,12 @@ namespace BenchmarkDotNet2Highcharts.UnitTests
                 new [] { 2_000_700_000m, 3_500_000_000m },
                 new [] { 1_000_000_000m, 9_000_000_000m }
             };
+            var series = new Series
+            {
+                Data = data
+            };
 
-            var unit = UnitFitter.ApplyBestFit(data);
+            var unit = UnitFitter.ApplyBestFit(new[] { series });
 
             Assert.AreEqual(Unit.Second, unit);
 
