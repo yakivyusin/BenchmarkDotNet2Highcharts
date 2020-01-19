@@ -1,4 +1,6 @@
-﻿namespace BenchmarkDotNet2Highcharts.Models.Highcharts
+﻿using BenchmarkDotNet2Highcharts.Models.Highcharts.Series;
+
+namespace BenchmarkDotNet2Highcharts.Models.Highcharts
 {
     internal class Plot
     {
@@ -7,6 +9,6 @@
         public Legend Legend { get; set; }
         public XAxis XAxis { get; set; }
         public YAxis YAxis { get; set; }
-        public Series[] Series { get; set; }
+        public AbstractSeriesCollection Series { get; set; }
     }
 }

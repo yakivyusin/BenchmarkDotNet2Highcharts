@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet2Highcharts.Models.Highcharts;
+using BenchmarkDotNet2Highcharts.Models.Highcharts.Series.BoxPlot;
 
 namespace BenchmarkDotNet2Highcharts.Models
 {
@@ -19,7 +20,8 @@ namespace BenchmarkDotNet2Highcharts.Models
                 },
                 Legend = new Legend(),
                 XAxis = new XAxis(),
-                YAxis = new YAxis()
+                YAxis = new YAxis(),
+                Series = new BoxPlotSeriesCollection()
             };
         }
     }

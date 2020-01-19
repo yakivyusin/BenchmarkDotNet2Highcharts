@@ -1,14 +1,13 @@
 ﻿using BenchmarkDotNet2Highcharts.Models;
-using BenchmarkDotNet2Highcharts.Models.Highcharts;
-using System.Linq;
+using BenchmarkDotNet2Highcharts.Models.Highcharts.Series;
 
 namespace BenchmarkDotNet2Highcharts.Business
 {
     internal static class UnitFitter
     {
-        public static Unit ApplyBestFit(Series[] values)
+        public static Unit ApplyBestFit(AbstractSeriesCollection values)
         {
-            var minValue = values.Min(s => s.Data.Min(x => x.Min()));
+            var minValue = values.Min();
             var currentUnit = Unit.Nanosecond;
 
             while (minValue >= ConvertUnitToNanoseconds(currentUnit) * 1000 && currentUnit <= Unit.Second)
@@ -20,24 +19,11 @@ namespace BenchmarkDotNet2Highcharts.Business
             {
                 var divideCoeff = ConvertUnitToNanoseconds(currentUnit);
 
-                foreach (var series in values)
-                {
-                    ApplyBestFitToSeries(series, divideCoeff);
-                }
+                values.DivideValues(divideCoeff);
+                values.SetUnit(currentUnit);
             }
 
             return currentUnit;
-        }
-
-        private static void ApplyBestFitToSeries(Series series, decimal divideCoeff)
-        {
-            for (int i = 0; i < series.Data.Length; i++)
-            {
-                for (int j = 0; j < series.Data[i].Length; j++)
-                {
-                    series.Data[i][j] /= divideCoeff;
-                }
-            }
         }
 
         private static decimal ConvertUnitToNanoseconds(Unit unit)

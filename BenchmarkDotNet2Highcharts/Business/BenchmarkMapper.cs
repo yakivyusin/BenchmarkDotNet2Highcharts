@@ -26,34 +26,14 @@ namespace BenchmarkDotNet2Highcharts.Business
             var series = benchmarkGroup.GroupBy(x => x.SpecificRuntime);
 
             plot.Legend.Enabled = series.Count() > 1;
-            plot.Series = series.Select(x => MapToSeries(x.Key, x)).ToArray();
             plot.XAxis.Categories = series.First().Select(x => x.Method).ToArray();
             plot.YAxis.Title = new YAxisTitle();
+
+            series.OnEach(x => plot.Series.AddSeries(x.Key, x));
 
             FitPlotUnits(plot);
 
             return plot;
-        }
-
-        private Series MapToSeries(string runtime, IEnumerable<Benchmark> benchmarkSeries)
-        {
-            var series = new Series
-            {
-                Name = runtime,
-                Data = benchmarkSeries
-                    .Select(x => new[]
-                    {
-                        x.Statistics.Min,
-                        x.Statistics.Q1,
-                        x.Statistics.Median,
-                        x.Statistics.Q3,
-                        x.Statistics.Max
-                    })
-                    .ToArray(),
-                Tooltip = new Tooltip()
-            };
-
-            return series;
         }
 
         private string GetPlotTitle(Benchmark benchmark)
@@ -69,7 +49,6 @@ namespace BenchmarkDotNet2Highcharts.Business
         {
             var bestFitUnit = UnitFitter.ApplyBestFit(plot.Series);
 
-            plot.Series.OnEach(s => s.Tooltip.Unit = bestFitUnit);
             plot.YAxis.Title.Unit = bestFitUnit;
         }
     }
