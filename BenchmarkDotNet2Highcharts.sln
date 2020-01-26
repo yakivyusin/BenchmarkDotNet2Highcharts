@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkDotNet2Highcharts", "BenchmarkDotNet2Highcharts\BenchmarkDotNet2Highcharts.csproj", "{ACC6AE3B-D4D3-400A-9383-F9F019B7B2F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkDotNet2Highcharts.UnitTests", "BenchmarkDotNet2Highcharts.UnitTests\BenchmarkDotNet2Highcharts.UnitTests.csproj", "{CBA10264-8241-42CB-98D5-FF2FA447A5DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkDotNet2Highcharts.UnitTests", "BenchmarkDotNet2Highcharts.UnitTests\BenchmarkDotNet2Highcharts.UnitTests.csproj", "{CBA10264-8241-42CB-98D5-FF2FA447A5DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkDotNet2Highcharts.Samples", "BenchmarkDotNet2Highcharts.Samples\BenchmarkDotNet2Highcharts.Samples.csproj", "{5B3524B1-BC4B-4F68-A728-FA44D2F62745}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CBA10264-8241-42CB-98D5-FF2FA447A5DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBA10264-8241-42CB-98D5-FF2FA447A5DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBA10264-8241-42CB-98D5-FF2FA447A5DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3524B1-BC4B-4F68-A728-FA44D2F62745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3524B1-BC4B-4F68-A728-FA44D2F62745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3524B1-BC4B-4F68-A728-FA44D2F62745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3524B1-BC4B-4F68-A728-FA44D2F62745}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
