@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            float: left;
+            width: 650px;
+            height: 450px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .highcharts-figure, .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 700px;
+            margin: 1em auto;
+        }
+
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #EBEBEB;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+    </style>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+</head>
+<body>
+    <div class="clearfix">
+        <div id="plot-0" class="box"></div>
+<div id="plot-1" class="box"></div>
+<div id="plot-2" class="box"></div>
+<div id="plot-3" class="box"></div>
+<div id="plot-4" class="box"></div>
+<div id="plot-5" class="box"></div>
+    </div>
+
+    <script>Highcharts.chart("plot-0", {
+  "chart": {
+    "type": "boxplot",
+    "zoomType": "xy"
+  },
+  "title": {
+    "text": "ParameterizedBenchmark: A=200&B=20"
+  },
+  "legend": {
+    "enabled": false
+  },
+  "xAxis": {
+    "categories": [
+      "C",
+      "D"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "unit": "millisecond",
+      "text": "Values (ms)"
+    }
+  },
+  "series": [
+    {
+      "data": [
+        [
+          220.27127146,
+          220.42479310333332,
+          220.55671908333334,
+          220.73333312,
+          220.92897699666667
+        ],
+        [
+          180.36056204333332,
+          180.56946266333333,
+          180.62077909,
+          180.88719687333333,
+          181.01677085
+        ]
+      ],
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    }
+  ]
+});</script>
+<script>Highcharts.chart("plot-1", {
+  "chart": {
+    "type": "boxplot",
+    "zoomType": "xy"
+  },
+  "title": {
+    "text": "ParameterizedBenchmark: A=200&B=30"
+  },
+  "legend": {
+    "enabled": false
+  },
+  "xAxis": {
+    "categories": [
+      "C",
+      "D"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "unit": "millisecond",
+      "text": "Values (ms)"
+    }
+  },
+  "series": [
+    {
+      "data": [
+        [
+          230.21468441,
+          230.35644603666666,
+          230.50291167333332,
+          230.71437811333334,
+          230.96818060666668
+        ],
+        [
+          170.15928404999998,
+          170.38614542,
+          170.52854850333333,
+          170.68442215,
+          170.74215313
+        ]
+      ],
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    }
+  ]
+});</script>
+<script>Highcharts.chart("plot-2", {
+  "chart": {
+    "type": "boxplot",
+    "zoomType": "xy"
+  },
+  "title": {
+    "text": "ParameterizedBenchmark: A=200&B=40"
+  },
+  "legend": {
+    "enabled": false
+  },
+  "xAxis": {
+    "categories": [
+      "C",
+      "D"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "unit": "millisecond",
+      "text": "Values (ms)"
+    }
+  },
+  "series": [
+    {
+      "data": [
+        [
+          240.23314763333333,
+          240.39479437666667,
+          240.51303597666666,
+          240.66634379999998,
+          240.82521090666667
+        ],
+        [
+          160.3038573925,
+          160.419479715,
+          160.6136803175,
+          160.6747789375,
+          160.7217655425
+        ]
+      ],
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    }
+  ]
+});</script>
+<script>Highcharts.chart("plot-3", {
+  "chart": {
+    "type": "boxplot",
+    "zoomType": "xy"
+  },
+  "title": {
+    "text": "ParameterizedBenchmark: A=300&B=20"
+  },
+  "legend": {
+    "enabled": false
+  },
+  "xAxis": {
+    "categories": [
+      "C",
+      "D"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "unit": "millisecond",
+      "text": "Values (ms)"
+    }
+  },
+  "series": [
+    {
+      "data": [
+        [
+          320.137207295,
+          320.583018755,
+          320.73760949,
+          320.860768915,
+          320.901822055
+        ],
+        [
+          280.27717285,
+          280.510341865,
+          280.67583734,
+          280.843898635,
+          280.97283116
+        ]
+      ],
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    }
+  ]
+});</script>
+<script>Highcharts.chart("plot-4", {
+  "chart": {
+    "type": "boxplot",
+    "zoomType": "xy"
+  },
+  "title": {
+    "text": "ParameterizedBenchmark: A=300&B=30"
+  },
+  "legend": {
+    "enabled": false
+  },
+  "xAxis": {
+    "categories": [
+      "C",
+      "D"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "unit": "millisecond",
+      "text": "Values (ms)"
+    }
+  },
+  "series": [
+    {
+      "data": [
+        [
+          330.154815245,
+          330.278295395,
+          330.395360995,
+          330.523331335,
+          330.853360105
+        ],
+        [
+          270.117482545,
+          270.36444285,
+          270.57163292,
+          270.807367755,
+          270.93437591
+        ]
+      ],
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    }
+  ]
+});</script>
+<script>Highcharts.chart("plot-5", {
+  "chart": {
+    "type": "boxplot",
+    "zoomType": "xy"
+  },
+  "title": {
+    "text": "ParameterizedBenchmark: A=300&B=40"
+  },
+  "legend": {
+    "enabled": false
+  },
+  "xAxis": {
+    "categories": [
+      "C",
+      "D"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "unit": "millisecond",
+      "text": "Values (ms)"
+    }
+  },
+  "series": [
+    {
+      "data": [
+        [
+          340.1887803,
+          340.44792826,
+          340.69424711,
+          340.92003939,
+          341.01818205
+        ],
+        [
+          260.304498845,
+          260.553383515,
+          260.62715088,
+          260.79617436,
+          260.97193312
+        ]
+      ],
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    }
+  ]
+});</script>
+</body>
+</html>

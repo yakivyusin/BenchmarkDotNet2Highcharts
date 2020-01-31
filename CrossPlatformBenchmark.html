@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            float: left;
+            width: 650px;
+            height: 450px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .highcharts-figure, .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 700px;
+            margin: 1em auto;
+        }
+
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #EBEBEB;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+    </style>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+</head>
+<body>
+    <div class="clearfix">
+        <div id="plot-0" class="box"></div>
+<div id="plot-1" class="box"></div>
+    </div>
+
+    <script>Highcharts.chart("plot-0", {
+  "chart": {
+    "type": "boxplot",
+    "zoomType": "xy"
+  },
+  "title": {
+    "text": "CrossPlatformBenchmark: A=20"
+  },
+  "legend": {
+    "enabled": true
+  },
+  "xAxis": {
+    "categories": [
+      "B",
+      "C"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "unit": "millisecond",
+      "text": "Values (ms)"
+    }
+  },
+  "series": [
+    {
+      "data": [
+        [
+          520.19846628,
+          520.33573772,
+          520.48712118,
+          520.6936698,
+          520.91112316
+        ],
+        [
+          720.04900719,
+          720.42297565,
+          720.61861952,
+          720.77770045,
+          720.99387089
+        ]
+      ],
+      "name": ".NET 4.7.2",
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    },
+    {
+      "data": [
+        [
+          520.11315272,
+          520.28313838,
+          520.68276506,
+          520.78603937,
+          521.0067
+        ],
+        [
+          720.08364578,
+          720.35433993,
+          720.55511545,
+          720.97719306,
+          721.02722657
+        ]
+      ],
+      "name": ".NET Core 2.2",
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    }
+  ]
+});</script>
+<script>Highcharts.chart("plot-1", {
+  "chart": {
+    "type": "boxplot",
+    "zoomType": "xy"
+  },
+  "title": {
+    "text": "CrossPlatformBenchmark: A=30"
+  },
+  "legend": {
+    "enabled": true
+  },
+  "xAxis": {
+    "categories": [
+      "B",
+      "C"
+    ]
+  },
+  "yAxis": {
+    "title": {
+      "unit": "millisecond",
+      "text": "Values (ms)"
+    }
+  },
+  "series": [
+    {
+      "data": [
+        [
+          530.03005218,
+          530.30395361,
+          530.59324997,
+          530.63622747,
+          530.7779891
+        ],
+        [
+          730.17373818,
+          730.38990862,
+          730.71448502,
+          730.95246495,
+          731.04483452
+        ]
+      ],
+      "name": ".NET 4.7.2",
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    },
+    {
+      "data": [
+        [
+          530.03005218,
+          530.27637103,
+          530.49703167,
+          530.7478407,
+          531.00185701
+        ],
+        [
+          730.1288363,
+          730.23467643,
+          730.62660564,
+          730.78825239,
+          730.99864974
+        ]
+      ],
+      "name": ".NET Core 2.2",
+      "tooltip": {
+        "unit": "millisecond",
+        "headerFormat": "<b>Observations {point.key} (ms)</b><br/>"
+      }
+    }
+  ]
+});</script>
+</body>
+</html>
