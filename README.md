@@ -1,4 +1,4 @@
-# BenchmarkDotNet2Highcharts
+# BenchmarkDotNet2Highcharts [![NuGet](https://img.shields.io/nuget/v/BenchmarkDotNet2Highcharts.svg)](https://www.nuget.org/packages/BenchmarkDotNet2Highcharts/)
 
 Exporter to interactive charts (uses Highcharts) for BenchmarkDotNet. Supports simple, parameterized and cross-framework benchmarks!
 
